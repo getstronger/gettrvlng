@@ -1,0 +1,50 @@
+{
+  "name": "gettrvlng",
+ "description": "Landing page for TRVLNG app.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/bradstrong/gettrvlng",
+  "author": {
+    "name": "",
+    "url": "http://github.com/bradstrong/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bradstrong/gettrvlng.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bradstrong/gettrvlng/issues"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "scripts": {
+    "test": "grunt assemble"
+  },
+  "devDependencies": {
+    "assemble": "~0.4.41",
+    "grunt": "~0.4.4",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-connect": "~0.8.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "load-grunt-tasks": "~0.6.0",
+    "time-grunt": "~0.3.2",
+    "assemble-contrib-anchors": "~0.1.0",
+    "assemble-contrib-permalinks": "*",
+    "assemble-contrib-sitemap": "*",
+    "assemble-contrib-toc": "*"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/bradstrong/gettrvlng/blob/master/LICENSE-MIT"
+    }
+  ],
+  "keywords": [
+    "assemble",
+    "templates",
+    "handlebars",
+    "site generator",
+    "site builder",
+    "grunt"
+  ]
+}
