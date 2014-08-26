@@ -1,6 +1,6 @@
 {
   "name": "gettrvlng",
- "description": "Landing page for TRVLNG app.",
+  "description": "Landing page for TRVLNG app.",
   "version": "0.1.0",
   "homepage": "https://github.com/bradstrong/gettrvlng",
   "author": {
@@ -31,7 +31,8 @@
     "assemble-contrib-anchors": "~0.1.0",
     "assemble-contrib-permalinks": "*",
     "assemble-contrib-sitemap": "*",
-    "assemble-contrib-toc": "*"
+    "assemble-contrib-toc": "*",
+    "grunt-gh-pages": "~0.9.1"
   },
   "licenses": [
     {
