@@ -15,4 +15,8 @@ results
 npm-debug.log
 node_modules
 
+.grunt
+
+bower_components
+
 *.sublime-*
