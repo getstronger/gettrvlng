@@ -93,13 +93,13 @@
           <h3>Follow us</h3>
           <ul class="list-inline">
             <li>
-              <a href="https://twitter.com/gettrvlng" class="btn btn-primary btn-lg"><i class="fa fa-twitter fa-2x fa-fw"></i><span class="sr-only">twitter</span></a>
+              <a href="https://twitter.com/gettrvlng" data-social-twitter class="btn btn-primary btn-lg"><i class="fa fa-twitter fa-2x fa-fw"></i><span class="sr-only">twitter</span></a>
             </li>
             <li>
-              <a href="https://www.facebook.com/trvlng" class="btn btn-primary btn-lg"><i class="fa fa-facebook fa-2x fa-fw"></i><span class="sr-only">facebook</span></a>
+              <a href="https://www.facebook.com/trvlng" data-social-facebook class="btn btn-primary btn-lg"><i class="fa fa-facebook fa-2x fa-fw"></i><span class="sr-only">facebook</span></a>
             </li>
             <li>
-              <a href="http://gettrvlng.tumblr.com" class="btn btn-primary btn-lg"><i class="fa fa-tumblr fa-2x fa-fw"></i><span class="sr-only">tumblr</span></a>
+              <a href="http://gettrvlng.tumblr.com" data-social-tumblr class="btn btn-primary btn-lg"><i class="fa fa-tumblr fa-2x fa-fw"></i><span class="sr-only">tumblr</span></a>
             </li>
           </ul>
         </div>
@@ -287,6 +287,39 @@
       }
     })
   });
+
+// GA events
+$(document).ready(function() {
+  $('[data-social-twitter]').on('click', function(e){
+    analytics.track('visit twitter', {
+      category: 'social',
+      label: 'lead',
+      value: 0
+    });
+    console.log('clicked on twitter');
+  });
+
+  $('[data-social-facebook]').on('click', function(e){
+    analytics.track('visit facebook', {
+      category: 'social',
+      label: 'lead',
+      value: 0
+    });
+    console.log('clicked on twitter');
+  });
+
+  $('[data-social-tumblr]').on('click', function(e){
+    analytics.track('visit tumblr', {
+      category: 'social',
+      label: 'lead',
+      value: 0
+    });
+    console.log('clicked on twitter');
+  });
+
+
+});
+
   </script>
 </body>
 
