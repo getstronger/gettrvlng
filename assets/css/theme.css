@@ -1,5 +1,5 @@
 body {
-  padding-top: 70px;
+  padding-top: 0;
   padding-bottom: 30px;
 }
 
@@ -11,4 +11,20 @@ body {
 
 .theme-showcase > p > .btn {
   margin: 5px 0;
+}
+
+.page-section{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.intro-header{
+  background: linear-gradient(to bottom, #1d77ef 0%,#81f3fd 100%) no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.page-section.benefits{
+  background-color: rgb(247, 247, 247);
 }
