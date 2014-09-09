@@ -29,23 +29,39 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body style="margin:0; padding:0;">
 
   <!-- Segment.io -->
   {{> segmentEmbed }}
   {{> facebookSDK }}
-
-    {{> navbar-fixed-top }}
 
     {{> body }}
 
 
     <footer class="container">
     <div class="row">
+      <div class="col-xs-12">
+        <h3>Follow us</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <a href="{{site.twitterURL}}" class="btn btn-primary btn-lg btn-block"><i class="fa fa-twitter fa-2x"></i><span class="sr-only">twitter</span></a>
+      </div>
+      <div class="col-xs-4">
+        <a href="{{site.facebookURL}}" class="btn btn-primary btn-lg btn-block"><i class="fa fa-facebook fa-2x"></i><span class="sr-only">facebook</span></a>
+      </div>
+      <div class="col-xs-4">
+        <a href="{{site.tumblrURL}}" class="btn btn-primary btn-lg btn-block"><i class="fa fa-tumblr fa-2x"></i><span class="sr-only">tumblr</span></a>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
       <div class="center-block col-xs-12">
-        <p class="text-center">{{> mixpanelBadge}}</p>
-        <hr>
         <p class="text-center text-muted">Made with <span class="glyphicon glyphicon-heart"></span> in PHL</p>
+        <hr>
+        <p class="text-center">{{> mixpanelBadge}}</p>
+
       </div>
     </div>
     </footer>
@@ -55,6 +71,75 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{assets}}/js/bootstrap.min.js"></script>
 
+    <!-- Include uncompressed version of Bootstrap Validator -->
+    <script type="text/javascript" src="/lib/bootstrapvalidator/bootstrapValidator.js"></script>
 
+
+<script>
+$(document).ready(function() {
+  $('#formNlRsvp').on('init.form.bv', function(e, data) {
+            // $(e.target)  --> The form instance
+            // data.bv      --> The BootstrapValidator instance
+            // data.options --> The form options
+
+            // Do something ...
+            console.log(data.options);
+        }).bootstrapValidator({
+    message: 'This value is not valid',
+    live: 'enabled',
+    feedbackIcons: {
+      required: 'fa glyphicon-asterisk',
+      valid: 'fa fa-check',
+      invalid: 'fa fa-times',
+      validating: 'fa fa-refresh'
+    },
+    fields: {
+      MERGE0: { //email
+        validators: {
+          notEmpty: {
+            message: 'The email is required and cannot be empty'
+          },
+          emailAddress: {
+            message: 'The input is not a valid email address'
+          }
+        }
+      },
+      MERGE1: { //firstName
+        validators: {
+          notEmpty: {
+            enabled: true,
+            message: 'The email is required and cannot be empty'
+          },
+          regexp: {
+            regexp: /^[a-zA-Z]+$/,
+            message: 'Only letters are allowed'
+          }
+        }
+      },
+      MERGE2: { //lastName
+        validators: {
+          notEmpty: {
+            enabled: true,
+            message: 'The email is required and cannot be empty'
+          },
+          regexp: {
+            regexp: /^[a-zA-Z]+$/,
+            message: 'Only letters are allowed'
+          }
+        }
+      }
+    }
+  }).on('error.form.bv', function(e) {
+            // $(e.target) --> The form instance
+            // $(e.target).data('bootstrapValidator')
+            //             --> The BootstrapValidator instance
+
+            // Do something ...
+            console.log('error');
+        }).on('success.form.bv', function(e){
+    console.log('form validated');
+  })
+});
+</script>
   </body>
 </html>

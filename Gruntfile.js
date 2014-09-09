@@ -86,6 +86,15 @@ module.exports = function(grunt) {
         base: 'dist'
       },
       src: ['**/*']
+    },
+    bower: {
+      install: {
+         //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
+       options: {
+        targetDir: '<%= config.dist %>/lib',
+        install: true
+       }
+      }
     }
 
   });
@@ -95,17 +104,20 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-gh-pages');
+  grunt.loadNpmTasks('grunt-bower-task');
 
   grunt.registerTask('server', [
     'clean',
     'assemble',
+    'bower:install',
     'connect:livereload',
     'watch'
   ]);
 
   grunt.registerTask('build', [
     'clean',
-    'assemble'
+    'assemble',
+    'bower:install'
   ]);
 
   grunt.registerTask('default', [

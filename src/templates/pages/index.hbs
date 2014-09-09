@@ -6,7 +6,19 @@ lead: Find Events. Meet Guys. Plan Trips.
 <div class="jumbotron">
   <div class="container">
     <h1>{{ heading }}</h1>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel">
+          <div class="panel-body">
+            <h3>Coming soon to iPhone, Android and Web.</h3>
+            <p>TRVLING is the best way for gay men to find and share events, make new friends, and plan adventures.</p>
+            <p>RSVP with your email address and we'll let you know when we're ready for you.</p>
+          </div>
+          {{> mailchimpSignup}}
+        </div>
 
+      </div>
+    </div>
     <div class="row">
       <div class="col-sm-4" style="text-align:center;">
         <span class="fa-stack fa-5x">
@@ -14,6 +26,7 @@ lead: Find Events. Meet Guys. Plan Trips.
         <i class="fa fa-calendar fa-stack-1x fa-inverse"></i>
         </span>
         <p class="lead">Find events.</p>
+        <p class="text-left">Browse listings of events around the country, filter by type, location, and event type.</p>
       </div>
 
       <div class="col-sm-4" style="text-align:center;">
@@ -22,6 +35,7 @@ lead: Find Events. Meet Guys. Plan Trips.
         <i class="fa fa-comments-o fa-stack-1x fa-inverse"></i>
         </span>
         <p class="lead">Meet guys.</p>
+        <p class="text-left">Find guys who are attending the same events of you, make plans in advance.</p>
       </div>
 
       <div class="col-sm-4" style="text-align:center;">
@@ -30,21 +44,13 @@ lead: Find Events. Meet Guys. Plan Trips.
         <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
         </span>
         <p class="lead">Plan trips.</p>
+        <p class="text-left">Add events to your schedule, share with friends, and plan ahead.</p>
       </div>
 
     </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="panel">
-          <div class="panel-body">
-            <p>Coming soon to iPhone, Android and Web.</p>
-            <p>RSVP with your email address and we'll let you know when we're ready for you.</p>
-          </div>
-        </div>
-        {{> mailchimpSignup}}
-      </div>
-    </div>
+
+    <hr>
   </div>
 </div>
 
-{{> fbFollow }}
+{{!-- {{> fbFollow }} --}}

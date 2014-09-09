@@ -14,20 +14,5 @@ component: navbar
       <a class="navbar-brand" href="{{relative page.dest "dist/index.html"}}">{{ site.title }}</a>
     </div>
 
-      <ul class="nav navbar-nav navbar-right">
-        <a href="{{site.twitterURL}}" class="btn btn-default navbar-btn"><i class="fa fa-twitter"></i><span class="sr-only">twitter</span></a>
-        <a href="{{site.facebookURL}}" class="btn btn-default navbar-btn"><i class="fa fa-facebook"></i><span class="sr-only">facebook</span></a>
-        <a href="{{site.tumblrURL}}" class="btn btn-default navbar-btn"><i class="fa fa-tumblr"></i><span class="sr-only">tumblr</span></a>
-
-        <!-- you can exclude pages using \{{#isnt}} helper: \{{#isnt data.title 'Blog'}} -->
-        {{#each pages}}
-        {{#isnt data.title 'Blog'}}
-{{!--       <li{{#if this.isCurrentPage}} class="active"{{/if}}>
-        <a href="{{relative dest this.dest}}">{{ data.title }}</a>
-      </li> --}}
-        {{/isnt}}
-        {{/each}}
-      </ul>
-
   </div>
 </div>
