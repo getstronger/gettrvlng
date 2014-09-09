@@ -154,7 +154,7 @@
         <p>You'll be one of the first people to gain access to TRVLNG and, in the mean time, we'll send you (very infrequent) updates on our progress. We will never sell your information and we promise not to spam.</p>
         </div>
       </div>
-      <form class="" action="http://gettrvlng.us9.list-manage1.com/subscribe/post" method="POST" role="form" id="formNlRsvp">
+      <form class="" action="http://gettrvlng.us9.list-manage1.com/subscribe/post" method="POST" role="form" id="formNlRsvp" autocomplete="on">
         <input type="hidden" name="u" value="3722260a4ddb7ed632fef494c">
         <input type="hidden" name="id" value="ec40e2fe49">
         <div class="row">
@@ -182,7 +182,7 @@
           </div>
           <!-- /.col-lg-12 -->
           <div class="col-sm-12">
-            <button type="submit" class="btn btn-block btn-primary btn-lg" name="submit" value="RSVP">RSVP</button>
+            <button type="submit" class="btn btn-block btn-primary btn-lg" name="submitFormNlRsvp" value="RSVP">RSVP</button>
           </div>
           <!-- /.col-lg-12 -->
         </div>
@@ -219,20 +219,29 @@
 
   <!-- Include uncompressed version of Bootstrap Validator -->
   <script type="text/javascript" src="/lib/bootstrapvalidator/bootstrapValidator.js"></script>
-
+  <!-- <script type="text/javascript" src="/lib/jquery-validation/jquery.validate.js"></script> -->
 
   <script>
-  $(document).ready(function() {
-    $('#formNlRsvp').on('init.form.bv', function(e, data) {
-      // $(e.target)  --> The form instance
-      // data.bv      --> The BootstrapValidator instance
-      // data.options --> The form options
+  // $(document).ready(function(){
+  //   rules: {
+  //    // no quoting necessary
+  //    MERGE0: "required",
+  //    MERGE1: "required",
+  //    MERGE2: "required"
+  //  };
 
-      // Do something ...
-      console.log(data.options);
-    }).bootstrapValidator({
+  //   $("#myform").validate({
+  //     submitHandler: function(form) {
+  //       form.submit();
+  //     }
+  //   });
+  // });
+
+  $(document).ready(function() {
+    $('#formNlRsvp').bootstrapValidator({
       message: 'This value is not valid',
-      live: 'enabled',
+      // live: 'enabled',
+      // trigger: ,
       feedbackIcons: {
         required: 'fa glyphicon-asterisk',
         valid: 'fa fa-check',
@@ -241,9 +250,10 @@
       },
       fields: {
         MERGE0: { //email
+          trigger: 'blur',
           validators: {
             notEmpty: {
-              message: 'The email is required and cannot be empty'
+              message: 'You must enter an email address to subscribe'
             },
             emailAddress: {
               message: 'The input is not a valid email address'
@@ -254,7 +264,7 @@
           validators: {
             notEmpty: {
               enabled: true,
-              message: 'The email is required and cannot be empty'
+              message: 'First name is required'
             },
             regexp: {
               regexp: /^[a-zA-Z]+$/,
@@ -266,7 +276,7 @@
           validators: {
             notEmpty: {
               enabled: true,
-              message: 'The email is required and cannot be empty'
+              message: 'Last name is required'
             },
             regexp: {
               regexp: /^[a-zA-Z]+$/,
@@ -275,15 +285,6 @@
           }
         }
       }
-    }).on('error.form.bv', function(e) {
-      // $(e.target) --> The form instance
-      // $(e.target).data('bootstrapValidator')
-      //             --> The BootstrapValidator instance
-
-      // Do something ...
-      console.log('error');
-    }).on('success.form.bv', function(e) {
-      console.log('form validated');
     })
   });
   </script>
